@@ -41,3 +41,6 @@ The contents of shell.php is just a plain old Trojan horse.
 Direct upload successfully returned the file address
 ![image.png](https://jerry-note-imgs.oss-cn-beijing.aliyuncs.com/imgs/202406271603682.png)
 We achieved RCE by uploading a malicious php script
+
+Meanwhile, I tested the official demo site and it can also achieve rce
+![image.png](https://jerry-note-imgs.oss-cn-beijing.aliyuncs.com/imgs/202406271735213.png)
