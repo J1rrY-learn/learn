@@ -1,15 +1,19 @@
 BUG_Author:
+
 Rui Jie
 
 Affected version:
+
 Version<=5.4.0
 
 Vendor:
 https://www.crmeb.com/
+
 CRMEB Standard Edition New Retail Social E-commerce System
 
 Software:
 https://gitee.com/ZhongBangKeJi/CRMEB
+
 https://github.com/crmeb/CRMEB
 
 
@@ -19,8 +23,11 @@ app/common.php
 
 Description:
  A vulnerability categorised as critical has been identified in CRMEB. This affects the put_image section of the file common.php. Manipulation of the image/code parameter results in phar deserialisation enabling the RCE
+ 
  It's a complicated process.
+ 
  This system is based on thinkphp6 again, I can get the available deserialisation chain through code audit
+ 
 ```php
  <?php  
   
@@ -73,14 +80,18 @@ $phar->stopBuffering();
 ```
 This generates a phar file containing the available serialisations, I try to pop up the calculator locally
 After any user has logged in, we can try to upload this file as an avatar, but there are some filters here
+
 ![image.png](https://jerry-note-imgs.oss-cn-beijing.aliyuncs.com/imgs/202407122332062.png)
 Both the suffix and the file content are restricted here
 We can try to gzip the phar file to bypass the content detection, modify the extension to .jpg renamed 123.jpg
+
 I'll put 123.jpg here
 ![123.jpg](https://jerry-note-imgs.oss-cn-beijing.aliyuncs.com/imgs/202407130004529.jpg)
 
 POC1
+
 Note that here I'm using yakit's tags directly to read the contents of the local file 123.jpg before uploading it
+
 ```POST /api/upload/image HTTP/1.1
 Host: 127.0.0.21
 sec-ch-ua-mobile: ?0
@@ -143,5 +154,7 @@ Content-Length: 53
 ![image.png](https://jerry-note-imgs.oss-cn-beijing.aliyuncs.com/imgs/202407130009247.png)
 
 However, it should be noted that it uses the CacheService::remember method to try to get the Base64 encoding of the $imageUrl from the cache, which should be changed after the first execution
+
 This means you may need to upload once, trigger once.
+
 Now we can execute any command to implement RCE！
