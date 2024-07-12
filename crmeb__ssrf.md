@@ -9,7 +9,9 @@ Vendor:
 https://www.crmeb.com/
 
 Software:
+
 https://gitee.com/ZhongBangKeJi/CRMEB
+
 https://github.com/crmeb/CRMEB
 
 
@@ -18,6 +20,7 @@ app/api/controller/v1/PublicController.php
 app/common.php
 
 Description:
+
 A vulnerability classified as Server-Side Request Forgery has been identified in CRMEB. This affects sections of the app/api/controller/v1/PublicController.php file. Manipulation of the parameter image/code leads to Server-Side Request Forgery
 It's an unauthorised interface, and doesn't even require any users.
 A server-side request can be forged by anyone by visiting /api/image_base64 and passing the parameter image/code 
