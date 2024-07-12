@@ -134,6 +134,7 @@ Now we can trigger it with the  `put_image` method in app/common.php(This is an 
 ![image.png](https://jerry-note-imgs.oss-cn-beijing.aliyuncs.com/imgs/202407122345869.png)
 There is a filter on phar://, which we can bypass with Phar://.
 The readfile function will trigger the phar deserialisation implementation rce
+
 POC2
 ```
 POST /api/image_base64 HTTP/1.1
