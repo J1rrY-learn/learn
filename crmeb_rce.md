@@ -9,7 +9,7 @@ Version<=5.4.0
 Vendor:
 https://www.crmeb.com/
 
-CRMEB Standard Edition New Retail Social E-commerce System
+CRMEB open source mall system
 
 Software:
 https://gitee.com/ZhongBangKeJi/CRMEB
