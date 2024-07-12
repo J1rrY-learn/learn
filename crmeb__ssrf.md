@@ -24,6 +24,8 @@ Description:
 A vulnerability classified as Server-Side Request Forgery has been identified in CRMEB. This affects sections of the app/api/controller/v1/PublicController.php file. Manipulation of the parameter image/code leads to Server-Side Request Forgery
 It's an unauthorised interface, and doesn't even require any users.
 A server-side request can be forged by anyone by visiting /api/image_base64 and passing the parameter image/code 
+
+
 Pass json data
 `{"image": "http://127.0.0.1:67?1=xxx", "code":""}`
 Even if here on the incoming imageurl/codeurl judgement, but here there is a logical problem, through the `&&` connection of the conditional judgement, even if there is no picture suffix, will not meet the conditions, but also will continue to perform subsequent functions to image_to_base64 to achieve the SSRF attack
@@ -67,4 +69,5 @@ Trigger curl here(app/common.php)
 ![image.png](https://jerry-note-imgs.oss-cn-beijing.aliyuncs.com/imgs/202407121446514.png)
 
 ![image.png](https://jerry-note-imgs.oss-cn-beijing.aliyuncs.com/imgs/202407121446706.png)
+
 However, it should be noted that it uses the CacheService::remember method to try to get the Base64 encoding of the $imageUrl from the cache, which should be changed after the first execution `http://127.0.0.1:67/?1=change me`.
