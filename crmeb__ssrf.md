@@ -2,7 +2,7 @@ BUG_Author:
 Rui Jie
 
 Affected version:
-CRMEB Standard Edition New Retail Social E-commerce System
+CRMEB open source mall system
 Version<=5.4.0
 
 Vendor:
