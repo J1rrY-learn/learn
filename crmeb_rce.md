@@ -89,6 +89,8 @@ We can try to gzip the phar file to bypass the content detection, modify the ext
 
 Please note that the generation of phar file immediately after the modification of the suffix name for the jpg and then gzip compression last modification of the suffix name for the 123.jpg
 
+This means you have to change the file extension twice
+
 I'll put 123.jpg here
 ![123.jpg](https://jerry-note-imgs.oss-cn-beijing.aliyuncs.com/imgs/202407130004529.jpg)
 
