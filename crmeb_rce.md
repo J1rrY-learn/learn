@@ -76,7 +76,7 @@ echo urlencode(serialize($b));
 $phar = new \Phar('x.phar');  
 $phar->stopBuffering();  
 $phar->setStub( 'GIF89a'.'<?php __HALT_COMPILER();?>');  
-$phar->addFromString('test.phar', 'test');  
+$phar->addFromString('test.txt', 'test');  
 $phar->setMetadata($b);  
 $phar->stopBuffering();
 ```
