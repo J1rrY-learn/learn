@@ -87,6 +87,8 @@ After any user has logged in, we can try to upload this file as an avatar, but t
 Both the suffix and the file content are restricted here
 We can try to gzip the phar file to bypass the content detection, modify the extension to .jpg renamed 123.jpg
 
+Please note that the generation of phar file immediately after the modification of the suffix name for the jpg and then gzip compression last modification of the suffix name for the 123.jpg
+
 I'll put 123.jpg here
 ![123.jpg](https://jerry-note-imgs.oss-cn-beijing.aliyuncs.com/imgs/202407130004529.jpg)
 
