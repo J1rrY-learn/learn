@@ -168,3 +168,6 @@ However, it should be noted that it uses the CacheService::remember method to tr
 This means you may need to upload once, trigger once.
 
 Now we can execute any command to implement RCE！
+
+Here is the attachment + demo video.zip might help you out
+https://jerry-note-imgs.oss-cn-beijing.aliyuncs.com/imgs/202407131647652.zip
