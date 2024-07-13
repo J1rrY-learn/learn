@@ -81,7 +81,7 @@ $phar->setMetadata($b);
 $phar->stopBuffering();
 ```
 This generates a phar file containing the available serialisations, I try to pop up the calculator locally
-After any user has logged in, we can try to upload this file as an avatar, but there are some filters here
+After any user has logged in(It can be verified with the default user 13000000000 111111), we can try to upload this file as an avatar, but there are some filters here
 
 ![image.png](https://jerry-note-imgs.oss-cn-beijing.aliyuncs.com/imgs/202407122332062.png)
 Both the suffix and the file content are restricted here
