@@ -94,6 +94,8 @@ I'll put 123.jpg here
 
 POC1
 
+I tried to upload the image via direct packet, of course you can grab the normal image upload packet first and then modify the content of the file.
+
 Note that here I'm using yakit's tags directly to read the contents of the local file 123.jpg before uploading it
 
 ```
